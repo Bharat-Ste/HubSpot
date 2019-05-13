@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- <suite name="Hub Spot Test Automation Suite" parallel="classes" thread-count="2"> -->
+<suite name="Hub Spot Test Automation Suite">
+    <listeners>
+		<!-- <listener class-name="com.wiziqxt.qa.ExtentReportListener.ExtentReporterNG" /> -->
+		<!--  <listener class-name="com.wiziqxt.qa.util.runTimeRetryAnalyzer" />-->	
+	</listeners>
+
+	<test name="Hub Spot Smoke Test">
+		<classes>
+			 <class name="com.qa.hubspot.test.LoginPageTest" />
+			 <class name="com.qa.hubspot.test.HomePageTest_dis" />
+		</classes>
+	</test>
+	
+</suite>
