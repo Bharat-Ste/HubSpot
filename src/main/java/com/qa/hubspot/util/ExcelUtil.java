@@ -21,6 +21,7 @@ public class ExcelUtil
 	{
 		// fetch the data from excel sheet:
 		
+		System.out.println("SheetName :: " + sheetname);
 		
 		FileInputStream file=null;
 		
@@ -50,6 +51,8 @@ public class ExcelUtil
 		
 		
 		sheet = book.getSheet(sheetname);
+		
+		System.out.println("*************");
 		
 		System.out.println("Get Last Row Numver :: "  + sheet.getLastRowNum());
 		System.out.println("Get Last Cell/Column Numver :: "  + sheet.getRow(0).getLastCellNum());

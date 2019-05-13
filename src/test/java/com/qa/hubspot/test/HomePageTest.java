@@ -57,6 +57,13 @@ public class HomePageTest
 		Assert.assertEquals(accountName, prop.getProperty("accountname"));
 	}
 	
+	@Test(priority=4,enabled=true)
+	public void verifySignOut_test()
+	{
+         homepage.do_signOut();
+         Assert.assertEquals(driver.getTitle(), constants.LOGINPAGE_TITLE," After signout user Title mismatched !!");   
+	}
+	
 	@AfterMethod
 	public void tearDown()
 	{

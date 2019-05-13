@@ -24,6 +24,9 @@ public class HomePage extends basePage{
 	@FindBy(id="nav-secondary-contacts")
 	WebElement contactSubLink;
 	
+	@FindBy(xpath="//div[@class='signout ']") 
+	WebElement signOut;
+	
 	public HomePage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -50,5 +53,13 @@ public class HomePage extends basePage{
 		commonUtil.shortWait();
 		contactSubLink.click();
 		return new Contects_ContactPage(driver);
+	}
+	
+	public void do_signOut()
+	{
+		commonUtil.mediumWait();
+		accountName.click();
+		commonUtil.mediumWait();
+		signOut.click();
 	}
 }

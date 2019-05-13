@@ -28,12 +28,8 @@ public class HomePageTest_dis
 		basepage = new basePage();
 		prop = basepage.initialize_properties();
 		driver = basepage.initialize_driver(prop);
-		//System.out.println("URL :: " + prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
-		
-		
 		commonUtil.mediumWait();
-		
 		loginpage =new LoginPage(driver);
 		homepage = loginpage.doLogin_(prop.getProperty("username"), prop.getProperty("password"));
 		commonUtil.longWait();

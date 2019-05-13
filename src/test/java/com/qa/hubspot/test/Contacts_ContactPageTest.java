@@ -44,40 +44,40 @@ public class Contacts_ContactPageTest
 	}
 	
 	
-	@Test(priority=1,enabled=true)
+	@Test(priority=1,enabled=false)
 	public void verifyContactPageTile()
 	{
 		Assert.assertEquals(contects_contactPage.getPageitle(), constants.CONTACTPAGE_TITLE);
 	}
 	
-	@Test(priority=2,enabled=true)
+	@Test(priority=2,enabled=false)
 	public void verifyContactsPageHeader()
 	{
 		Assert.assertEquals(contects_contactPage.getContactsPageHeader(), constants.CONTACTPAGE_HEADER);
 	}
 	
-	@Test(priority=3,enabled=true)
+	@Test(priority=3,enabled=false)
 	public void verifysearchTxtBox_visibility()
 	{
 		Assert.assertTrue(contects_contactPage.searchTxtBox_visibility());
 	}
-	@Test(priority=4,enabled=true)
+	@Test(priority=4,enabled=false)
 	public void verifyActionsBtn_visibility()
 	{
 		Assert.assertTrue(contects_contactPage.ActionsBtn_visibility());
 	}
-	@Test(priority=5,enabled=true)
+	@Test(priority=5,enabled=false)
 	public void verifyImport_btn_visibility()
 	{
 		Assert.assertTrue(contects_contactPage.Import_btn_visibility());
 	}
-	@Test(priority=5,enabled=true)
+	@Test(priority=5,enabled=false)
 	public void verifycreate_contact_btn_visibility()
 	{
 		Assert.assertTrue(contects_contactPage.create_contact_btn_visibility());
 	}
 	
-	@Test(priority=6,enabled=true)
+	@Test(priority=6,enabled=false)
 	public void createContactsTest1()
 	{
 		contects_contactPage.createContactsTest("abc@gmail.com", "Raveka", "joe", "SDET");
@@ -95,8 +95,6 @@ public class Contacts_ContactPageTest
 	{
 		contects_contactPage.createContactsTest(email, firstname, lastname, jobtitle);
 	}
-	
-	
 	
 	
 	@AfterMethod

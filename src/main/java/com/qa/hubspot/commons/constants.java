@@ -10,6 +10,12 @@ public class constants
 	
 	public static String LOGINPAGE_TITLE ="HubSpot Login";
 	
+	public static String LOGINPAGE_INVALID_EMAIL_MSG ="Please enter a valid email address.";
+	public static String LOGINPAGE_INVALID_PASSWORD_MSG ="You've entered an invalid password. For more detail on why this could be happening, please read ";
+//	public static String LOGINPAGE_INVALID_EMAIL_MSG ="Please enter a valid email address.";
+//	public static String LOGINPAGE_INVALID_EMAIL_MSG ="Please enter a valid email address.";
+	
+	
 	public static String HOMEPAGE_TITLE= "Getting Started | HubSpot";
 	public static String HOMEPAGE_HEADER= "Getting started with HubSpot";
 	public static String HOMEPAGE_WELCOME_MSG = "Welcome back, Bharat.";
