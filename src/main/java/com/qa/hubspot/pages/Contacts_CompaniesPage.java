@@ -33,7 +33,7 @@ public class Contacts_CompaniesPage extends basePage{
 	By left_panel_allSavedFilters=By.xpath("//i18n-string[text()='All saved filters']");
 	By left_panel_allCompnies_two=By.xpath("//strong[text()='All companies']");
 	By left_panel_addFilter_lnkBtn=By.xpath("//i18n-string[text()='Add filter']");
-	
+	By left_panel_addFilter_lnkBt1n=By.xpath("//i18n-string[text()='Add filter']");
 	public Contacts_CompaniesPage(WebDriver driver)
 	{
 		this.driver=driver;
