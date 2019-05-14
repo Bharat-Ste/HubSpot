@@ -26,9 +26,7 @@ public class LoginPageTest
 	Properties prop;
 	LoginPage loginpage;
 	HomePage homepage;
-	
-	//ElementActions elementActions;
-	
+
 	@BeforeMethod
 	public void setUp()
 	{
@@ -36,24 +34,21 @@ public class LoginPageTest
 		prop = basepage.initialize_properties();
 		driver = basepage.initialize_driver(prop);
 		//elementActions=new ElementActions(driver);
-		
 		System.out.println("URL :: " + prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
 		commonUtil.mediumWait();
 		loginpage =new LoginPage(driver);
-		
 	}
 	
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void verifyLoginPageTileTest()
 	{
 		String title =loginpage.getLoginPageTitle();
 		System.out.println("Login page Title is  :"+ title);
 		Assert.assertEquals(title, constants.LOGINPAGE_TITLE,"LoginPage title not correct");
-		
 	}
 	
-	@Test(priority=2,enabled=false)
+	@Test(priority=2,enabled=true)
 	public void verifySignUpLinkTest()
 	{
 		Assert.assertTrue(loginpage.verifySignUpLink(),"Sign up is not visible");
@@ -67,38 +62,53 @@ public class LoginPageTest
 	}
 	
 	@Test(dataProvider="getLoginData",priority=3,enabled=true)
-	public void verifyenterWrongEmail(String username,String password)
+	public void verify_LoginPage_negative_tests(String username,String password)
 	{
 		commonUtil.mediumWait();
-		String actualMsg=loginpage.enterWrongEmail(username,password);
-		String Expected = constants.LOGINPAGE_INVALID_EMAIL_MSG;
-		Assert.assertTrue(actualMsg.contains(Expected));
-	}
-	
-	@Test(dataProvider="getLoginData",priority=4,enabled=true)
-	public void verifyenterWrongPassword(String username,String password)
-	{
-		commonUtil.mediumWait();
-		String actualMsg=loginpage.enterWrongPassword(username,password);
-		String Expected = constants.LOGINPAGE_INVALID_PASSWORD_MSG;
-		Assert.assertTrue(actualMsg.contains(Expected));
-	}
-	
+		String actualMsg=loginpage.userNamePwd_Negative_Tests(username,password);
+		System.out.println("actualMsg : " + actualMsg);
+		if(actualMsg.contains(constants.LOGINPAGE_INVALID_EMAIL_MSG))
+		{
+			Assert.assertTrue(actualMsg.contains(constants.LOGINPAGE_INVALID_EMAIL_MSG));
+		}
+		else if(actualMsg.contains(constants.LOGINPAGE_INVALID_PASSWORD_MSG))
+		{
+			Assert.assertTrue(actualMsg.contains(constants.LOGINPAGE_INVALID_PASSWORD_MSG));
+		}
+		else if(actualMsg.contains(constants.LOGINPAGE_INVALID_NoT_ExistEmailID_MSG))
+		{
+			Assert.assertTrue(actualMsg.contains(constants.LOGINPAGE_INVALID_NoT_ExistEmailID_MSG));
+		}
+		else
+		{
+			System.out.println("Check Login page for other errors.");
+			Assert.fail();
+		}
+	}	
 	@Test(priority=5,enabled=true)
 	public void loginTest()
 	{
-		
 		homepage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		commonUtil.mediumWait();
 		Assert.assertEquals(loginpage.getLoginPageTitle(), constants.HOMEPAGE_TITLE);
-		
 	}
 	
+	@Test(priority=6,enabled=true)
+	public void EnterPress_test()
+	{
+		loginpage.PressEnterKey();
+	}
 	
+	@Test(priority=7,enabled=true)
+	public void gamilSignIN_TEST()
+	{
+		loginpage.gamil_signIN();
+	}
+
 	@AfterMethod
 	public void tearDown()
 	{
-		driver.quit();
+	    driver.quit();
 	}
 
 }

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.qa.hubspot.test.LoginPageTest">
+      <class name="com.qa.hubspot.test.Contacts_CompaniesPage_Test">
         <methods>
-          <include name="verifyenterWrongEmail"/>
+          <include name="exitSetup"/>
           <include name="setUp"/>
-          <include name="tearDown"/>
+          <include name="verifyCreatecompanyBtn_Test"/>
         </methods>
-      </class> <!-- com.qa.hubspot.test.LoginPageTest -->
+      </class> <!-- com.qa.hubspot.test.Contacts_CompaniesPage_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

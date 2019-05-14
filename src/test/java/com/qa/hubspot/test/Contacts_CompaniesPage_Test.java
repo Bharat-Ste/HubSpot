@@ -44,45 +44,45 @@ public class Contacts_CompaniesPage_Test
 
 	}
 	
-	@Test(priority=1,groups="Compnies Page WebElement Test")
+	@Test(priority=1,groups="Compnies Page WebElement Test",enabled=false)
 	public void verifyHomePageTitle_Test()
 	{
 		System.out.println("Page title is :: "  + contacts_companiespage.getCompaniesPageTitle() + " compare with expected is :: " + constants.COMPANIESPAGE_TITLE);
 		Assert.assertEquals(contacts_companiespage.getCompaniesPageTitle(), constants.COMPANIESPAGE_TITLE);
 	}
 	
-	@Test(priority=2,groups="Compnies Page WebElement Test")
+	@Test(priority=2,groups="Compnies Page WebElement Test",enabled=false)
 	public void verifyHomePageHeader_Test()
 	{
 		Assert.assertEquals(contacts_companiespage.getCompaniesPageHeaderValue(), constants.COMPANIESPAGE_HEADER);
 	}
-	@Test(priority=3,groups="Compnies Page WebElement Test")
+	@Test(priority=3,groups="Compnies Page WebElement Test",enabled=false)
 	public void verifyLoggedInAccountName_Test()
 	{
 		Assert.assertEquals(contacts_companiespage.getLoggedInAccountName(), prop.getProperty("accountname"));
 	}
-	@Test(priority=4,groups="Compnies Page WebElement Test")
+	@Test(priority=4,groups="Compnies Page WebElement Test",enabled=false)
 	public void verifySearchInputTextBox_Test()
 	{
 		Assert.assertTrue(contacts_companiespage.SearchTextInput_visible_test());
 	}
-	@Test(priority=5,groups="Compnies Page WebElement Test")
+	@Test(priority=5,groups="Compnies Page WebElement Test",enabled=false)
 	public void verifyActionsButton_Test()
 	{
 		Assert.assertTrue(contacts_companiespage.ActionsBtn_visible_test());
 	}
-	@Test(priority=6,groups="Compnies Page WebElement Test")
+	@Test(priority=6,groups="Compnies Page WebElement Test",enabled=true)
 	public void verifyImportBtn_Test()
 	{
 		Assert.assertTrue(contacts_companiespage.ImportBtn_visible_test());
 	}
-	@Test(priority=7,groups="Compnies Page WebElement Test")
+	@Test(priority=7,groups="Compnies Page WebElement Test",enabled=true)
 	public void verifyCreatecompanyBtn_Test()
 	{
 		Assert.assertTrue(contacts_companiespage.CreatecompanyBtn_visible_test());
 	}
 	
-	@Test(priority=8,groups="Create Company - Feature Test")
+	@Test(priority=8,groups="Create Company - Feature Test",enabled=false)
 	public void CreateComp_addRecord()
 	{
 		
@@ -93,7 +93,7 @@ public class Contacts_CompaniesPage_Test
 	@AfterMethod
 	public void exitSetup()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 	
 	

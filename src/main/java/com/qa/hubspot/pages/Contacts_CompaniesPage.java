@@ -6,12 +6,14 @@ import org.openqa.selenium.WebElement;
 
 import com.qa.hubspot.BasePage.basePage;
 import com.qa.hubspot.util.ElementActions;
+import com.qa.hubspot.util.actionsOn_webElement;
 import com.qa.hubspot.util.commonUtil;
 
 public class Contacts_CompaniesPage extends basePage{
 	
 	WebDriver driver;
 	ElementActions actions=new ElementActions();
+	actionsOn_webElement ac;
 	
 	// Page Repository
 	By CompniesPage_Header = By.xpath("//i18n-string[text()='Companies']");
@@ -24,7 +26,7 @@ public class Contacts_CompaniesPage extends basePage{
 	By CreateCompany_btn = By.xpath("//span[text()='Create company']");
 	
 	//RIGHT panel Table
-	By Table=By.xpath("//table[@data-reagan-test=\"data-table\"]");
+	By Table=By.xpath("//table[@data-reagan-test='data-table']//tbody/tr");
 	
 	//LEFT panel link Buttons
 	By left_panel_allCompnies=By.xpath("//span[text()='All companies']");
@@ -71,11 +73,18 @@ public class Contacts_CompaniesPage extends basePage{
 	}
 	public boolean ImportBtn_visible_test()
 	{
-		return actions.getWebElement(Import_btn,driver).isDisplayed();
+		ac= new actionsOn_webElement(driver);
+		return ac.getWebElement(Import_btn).isDisplayed();
 	}
 	public boolean CreatecompanyBtn_visible_test()
 	{
-		return actions.getWebElement(CreateCompany_btn,driver).isDisplayed();
+		//return actions.getWebElement(CreateCompany_btn,driver).isDisplayed();
+		ac= new actionsOn_webElement(driver);
+		return ac.getWebElement(CreateCompany_btn).isDisplayed();
+		
+		
 	}
+	
+	
 	
 }
