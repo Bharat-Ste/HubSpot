@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="7" total="8" passed="1">
+<testng-results skipped="0" failed="0" ignored="8" total="9" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38749" started-at="2019-05-13T13:00:58Z" finished-at="2019-05-13T13:01:37Z">
+  <suite name="Default suite" duration-ms="54586" started-at="2019-05-14T12:35:19Z" finished-at="2019-05-14T12:36:14Z">
     <groups>
-      <group name="Compnies Page WebElement Test">
-        <method signature="Contacts_CompaniesPage_Test.verifyCreatecompanyBtn_Test()[pri:7, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="verifyCreatecompanyBtn_Test" class="com.qa.hubspot.test.Contacts_CompaniesPage_Test"/>
-      </group> <!-- Compnies Page WebElement Test -->
+      <group name="Create Company - Feature Test">
+        <method signature="Contacts_CompaniesPage_Test.Verify_deleteCompany()[pri:8, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="Verify_deleteCompany" class="com.qa.hubspot.test.Contacts_CompaniesPage_Test"/>
+      </group> <!-- Create Company - Feature Test -->
     </groups>
-    <test name="Default test" duration-ms="38749" started-at="2019-05-13T13:00:58Z" finished-at="2019-05-13T13:01:37Z">
+    <test name="Default test" duration-ms="54586" started-at="2019-05-14T12:35:19Z" finished-at="2019-05-14T12:36:14Z">
       <class name="com.qa.hubspot.test.Contacts_CompaniesPage_Test">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="setUp" is-config="true" duration-ms="34972" started-at="2019-05-13T18:30:58Z" finished-at="2019-05-13T18:31:33Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="setUp" is-config="true" duration-ms="33641" started-at="2019-05-14T18:05:19Z" finished-at="2019-05-14T18:05:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyCreatecompanyBtn_Test()[pri:7, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="verifyCreatecompanyBtn_Test" duration-ms="3206" started-at="2019-05-13T18:31:33Z" finished-at="2019-05-13T18:31:36Z">
+        <test-method status="PASS" signature="Verify_deleteCompany()[pri:8, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="Verify_deleteCompany" duration-ms="20927" started-at="2019-05-14T18:05:53Z" finished-at="2019-05-14T18:06:14Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreatecompanyBtn_Test -->
-        <test-method status="PASS" signature="exitSetup()[pri:0, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="exitSetup" is-config="true" duration-ms="554" started-at="2019-05-13T18:31:36Z" finished-at="2019-05-13T18:31:37Z">
+        </test-method> <!-- Verify_deleteCompany -->
+        <test-method status="PASS" signature="exitSetup()[pri:0, instance:com.qa.hubspot.test.Contacts_CompaniesPage_Test@47c62251]" name="exitSetup" is-config="true" duration-ms="0" started-at="2019-05-14T18:06:14Z" finished-at="2019-05-14T18:06:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exitSetup -->

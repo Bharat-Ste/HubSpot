@@ -16,9 +16,10 @@ import com.qa.hubspot.util.commonUtil;
 
 public class HomePageTest 
 {
-	basePage basepage;
 	WebDriver driver;
+	basePage basepage;
 	Properties prop;
+	
 	LoginPage loginpage;
 	HomePage homepage;
 	
@@ -28,6 +29,7 @@ public class HomePageTest
 		basepage = new basePage();
 		prop = basepage.initialize_properties();
 		driver = basepage.initialize_driver(prop);
+		
 		driver.get(prop.getProperty("url"));
 		commonUtil.mediumWait();
 		loginpage = new LoginPage(driver);

@@ -5,9 +5,9 @@
     <classes>
       <class name="com.qa.hubspot.test.Contacts_CompaniesPage_Test">
         <methods>
+          <include name="Verify_deleteCompany"/>
           <include name="exitSetup"/>
           <include name="setUp"/>
-          <include name="verifyCreatecompanyBtn_Test"/>
         </methods>
       </class> <!-- com.qa.hubspot.test.Contacts_CompaniesPage_Test -->
     </classes>

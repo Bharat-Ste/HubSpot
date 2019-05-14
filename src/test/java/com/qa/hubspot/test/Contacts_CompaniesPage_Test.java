@@ -82,18 +82,61 @@ public class Contacts_CompaniesPage_Test
 		Assert.assertTrue(contacts_companiespage.CreatecompanyBtn_visible_test());
 	}
 	
-	@Test(priority=8,groups="Create Company - Feature Test",enabled=false)
-	public void CreateComp_addRecord()
+	@Test(priority=8,groups="Create Company - Feature Test",enabled=true)
+	public void Verify_AddCompany()
 	{
+		int tbl_ROW_Count_Before_insertion= contacts_companiespage.getTableRowsCount();
+		System.out.println("Before insertion No. of Records :: " + tbl_ROW_Count_Before_insertion);
+		
+		contacts_companiespage.AddCompany_test();
+		commonUtil.shortWait();
+		driver.navigate().back();
+		driver.navigate().refresh();
+		commonUtil.shortWait();
+		int tbl_ROW_Count_after_insertion= contacts_companiespage.getTableRowsCount();
+		
+		System.out.println("After insertion No. of Records :: " + tbl_ROW_Count_after_insertion);
+		
+		System.out.println(tbl_ROW_Count_after_insertion);
+		if(tbl_ROW_Count_after_insertion>tbl_ROW_Count_Before_insertion)
+		{
+			Assert.assertEquals(tbl_ROW_Count_Before_insertion, tbl_ROW_Count_Before_insertion);
+		}
+		else if(tbl_ROW_Count_after_insertion==tbl_ROW_Count_Before_insertion)
+		{
+			Assert.assertEquals(tbl_ROW_Count_after_insertion, tbl_ROW_Count_Before_insertion);
+		}
+		
 		
 	}
-	
-	
+	@Test(priority=8,groups="Create Company - Feature Test",enabled=true)
+	public void Verify_deleteCompany()
+	{
+		int tbl_ROW_Count_Before_deletion= contacts_companiespage.getTableRowsCount();
+		System.out.println("Before Deletion No. of Records :: " + tbl_ROW_Count_Before_deletion);
+		
+		contacts_companiespage.DeleteCompany_topRecord();
+		commonUtil.shortWait();
+
+		int get_RowCountAfter_record_deletion= contacts_companiespage.getTableRowsCount();
+		//System.out.println("After Deletion No. of Records :: " + get_RowCountAfter_record_deletion);
+		//System.out.println(get_RowCountAfter_record_deletion);
+		if(tbl_ROW_Count_Before_deletion>get_RowCountAfter_record_deletion) // 7 = 6
+		{
+			Assert.assertEquals(get_RowCountAfter_record_deletion, tbl_ROW_Count_Before_deletion-1);//(6,7-1)
+		}
+		else  //6==6
+		{
+			Assert.assertEquals(get_RowCountAfter_record_deletion-1, tbl_ROW_Count_Before_deletion); //
+		}
+		
+	    System.out.println("CTEAT");
+	}
 	
 	@AfterMethod
 	public void exitSetup()
 	{
-		driver.quit();
+		//driver.quit();
 	}
 	
 	

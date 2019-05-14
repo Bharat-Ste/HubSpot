@@ -1,5 +1,6 @@
 package com.qa.hubspot.util;
 
+import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -51,7 +52,7 @@ public class actionsOn_webElement extends basePage
 		
 	    if(prop.getProperty("flashElement").equalsIgnoreCase("yes"))
 	    {
-	    	System.out.println("flashElement :: " + prop.getProperty("flashElement"));
+	    	//System.out.println("flashElement :: " + prop.getProperty("flashElement"));
 	    	JavascriptExecutor js = ((JavascriptExecutor) driver);
 			String bgcolor = element.getCssValue("backgroundColor");
 			for (int i = 0; i < 8; i++) 
@@ -106,5 +107,26 @@ public class actionsOn_webElement extends basePage
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("document.getElementById('" + id + "').value='"+value+"'");
 	}
+	
+	
+	
+	///************************* General UTIL
+	/**
+	 * 
+	 * @param table
+	 * @return
+	 * Pass table locator like : //table[@data-reagan-test='data-table']//tbody/tr
+	 */
+	public int get_TableRows_Count(By table,WebDriver driver)
+	{
+		WebElement ele = getWebElement(table);
+		List<WebElement> list= driver.findElements(table);
+		return list.size();
+	}
+	
+	
+	
+	
+	
 	
 }
